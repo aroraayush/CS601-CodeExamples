@@ -1,0 +1,57 @@
+{
+  "movies": [
+    {
+      "title": "Captain Marvel",
+      "year": 2019,
+      "directors": [
+        "Anna Boden",
+        "Ryan Fleck"
+      ]
+    },
+    {
+      "title": "Lion King",
+      "year": 2019,
+      "directors": [
+        "Jon Favreau"
+      ]
+    },
+    {
+      "title": "Iron Man",
+      "year": 2008,
+      "directors": [
+        "Jon Favreau"
+      ]
+    },
+    {
+      "title": "It's Kind of a Funny Story",
+      "year": 2010,
+      "directors": [
+        "Anna Boden",
+        "Ryan Fleck"
+      ]
+    },
+    {
+      "title": "Avengers: End Game",
+      "year": 2019,
+      "directors": [
+        "Anthony Russo",
+        "Joe Russo"
+      ]
+    },
+    {
+      "title": "Mississippi Grind",
+      "year": 2015,
+      "directors": [
+        "Anna Boden",
+        "Ryan Fleck"
+      ]
+    },
+    {
+      "title": "Elf",
+      "year": 2003,
+      "directors": [
+        "Jon Favreau"
+      ]
+    }
+  ]
+}

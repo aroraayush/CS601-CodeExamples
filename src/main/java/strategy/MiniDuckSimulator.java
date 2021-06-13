@@ -1,0 +1,22 @@
+package strategy;
+
+/** The Driver class for the strategy example.
+ * From the strategy design pattern example, from Head First Design Patterns */
+public class MiniDuckSimulator {
+ 
+	public static void main(String[] args) {
+ 
+		MallardDuck	mallard = new MallardDuck();
+		RubberDuck	rubberDuckie = new RubberDuck();
+		DecoyDuck	decoy = new DecoyDuck();
+		ModelDuck	model = new ModelDuck();
+
+		mallard.performQuack();
+		rubberDuckie.performQuack();
+		decoy.performQuack();
+   
+		model.performFly();	
+		model.setFlyBehavior(new FlyRocketPowered());
+		model.performFly(); // we changed the behavior at runtime!
+	}
+}

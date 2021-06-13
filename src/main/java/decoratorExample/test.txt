@@ -1,0 +1,8 @@
+red
+grEen
+bluE
+black
+yellow
+browN
+whitE
+purple
