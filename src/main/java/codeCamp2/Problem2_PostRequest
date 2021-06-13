@@ -1,7 +1,0 @@
-Note: Parameters of the post request are sent in the body:
-
-POST /courses.html HTTP/1.1
-Host: www.university.edu
-Connection: close
-
-semester=Fall&year=2019
