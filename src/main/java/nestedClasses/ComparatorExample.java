@@ -1,6 +1,7 @@
 package nestedClasses;
 
-import basicsClassesObjects.Student;
+
+import interfaces.Student;
 
 import java.awt.*;
 import java.util.Comparator;
@@ -17,10 +18,10 @@ public class ComparatorExample {
             }
         };
 
-        Set<Student> students = new TreeSet<Student>(comp);
-        students.add(new Student("Neha Singh"));
-        students.add(new Student ("Xue Liang"));
-        students.add(new Student("Allison K"));
+        Set<Student> students = new TreeSet<>(comp);
+        students.add(new Student("Neha Singh",12));
+        students.add(new Student ("Xue Liang",14));
+        students.add(new Student("Allison K",13));
         System.out.println(students);
 
 

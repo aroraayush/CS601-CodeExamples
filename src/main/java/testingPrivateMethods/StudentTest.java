@@ -1,6 +1,6 @@
 package testingPrivateMethods;
 
-import basicsClassesObjects.Student;
+import interfaces.Student;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
@@ -13,14 +13,14 @@ public class StudentTest {
 
     @Test
     public void testToString() {
-        Student st = new Student("Helen Chen");
+        Student st = new Student("Helen Chen",1);
         String expected = "Student: " + System.lineSeparator() + "First name: Helen";
         assertEquals("toString() fails for input Helen Chen", expected, st.toString());
     }
 
     @Test
     public void testGetFirstName() {
-        Student st = new Student("Helen Chen");
+        Student st = new Student("Helen Chen",12);
         String expected = "Helen";
         try {
             Class student = Student.class;
