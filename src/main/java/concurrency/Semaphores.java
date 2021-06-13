@@ -9,6 +9,8 @@ class Semaphores{
     public static void main(String[] args) throws InterruptedException {
 
         // Not Re entrant
+        // A semaphore is a variable or abstract data type used to control access to a common resource by multiple
+        // processes and avoid critical section problems in a concurrent system such as a multitasking operating system.
         Semaphore semaphore = new Semaphore(2);
         ExecutorService es = Executors.newFixedThreadPool(5);
         for(int i = 0; i < 10; i++)
