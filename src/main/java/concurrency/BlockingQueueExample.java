@@ -55,10 +55,10 @@ public class BlockingQueueExample {
 
 	public static void main(String[] args) {
 		BlockingQueue q = new BlockingQueue(5);
-		Thread thread1 = new Thread(new Consumer(q), "Consumer");
-		Thread thread2 = new Thread(new Producer(q), "Producer");
+		Thread consumerThread = new Thread(new Consumer(q), "Consumer");
+		Thread producerThread = new Thread(new Producer(q), "Producer");
 
-		thread1.start();
-		thread2.start();
+		consumerThread.start();
+		producerThread.start();
 	}
 }
