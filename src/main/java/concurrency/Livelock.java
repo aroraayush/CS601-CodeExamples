@@ -6,18 +6,6 @@ package concurrency;
  *  Each spouse is too polite, and will pass the spoon to their spouse if the spouse has not eaten
  * */
 public class Livelock {
-    static class Spoon {
-        private Diner owner;
-        public Spoon(Diner d) {
-            owner = d;
-        }
-
-        public synchronized Diner getOwner() { return owner; }
-        public synchronized void setOwner(Diner d) { owner = d; }
-        public synchronized void use() {
-            System.out.printf("%s has eaten!", owner.name);
-        }
-    }
 
     static class Diner {
         private String name;
@@ -59,18 +47,29 @@ public class Livelock {
         }
     }
 
-    public static void main(String[] args) {
+    static class Spoon {
+        private Diner owner;
+        public Spoon(Diner d) {
+            owner = d;
+        }
+
+        public synchronized Diner getOwner() { return owner; }
+        public synchronized void setOwner(Diner d) { owner = d; }
+        public synchronized void use() {
+            System.out.printf("%s has eaten!", owner.name);
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
         final Diner husband = new Diner("Bob");
         final Diner wife = new Diner("Alice");
 
         final Spoon s = new Spoon(wife);
 
-        new Thread(new Runnable() {
-            public void run() { husband.eatWith(s, wife); }
-        }).start();
+        Thread t1 = new Thread(() -> husband.eatWith(s, wife));
 
-        new Thread(new Runnable() {
-            public void run() { wife.eatWith(s, husband); }
-        }).start();
+        Thread t2 = new Thread(() -> wife.eatWith(s, husband));
+        t1.start();
+        t2.start();
     }
 }
