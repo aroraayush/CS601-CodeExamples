@@ -39,8 +39,8 @@ public class WithSynchronization {
         t2.join();
 
         // Note: we are reading x below, but no need to synchronize here since t1 and t2 finished
-        if (x != 0) // will only print something if x i not 0
-            System.out.print(x + " ");
+//        if (x != 0) // will only print something if x i not 0
+        System.out.print(x + " ");
         // System.out.println("Done");
     }
 

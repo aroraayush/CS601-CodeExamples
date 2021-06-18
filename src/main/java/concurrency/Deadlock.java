@@ -14,7 +14,7 @@ package concurrency;
  * SHOULD ALWAYS ACQUIRE THEIR LOCKS IN THE SAME ORDER.
  **/
 public class Deadlock {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException{
 
         //These are the two resource objects we'll try to get locks for
         final Object resource1 = "resource1";
@@ -79,5 +79,8 @@ public class Deadlock {
         //and the program will never exit.
         t1.start();
         t2.start();
+        t1.join();
+        t2.join();
+        System.out.println("Completed..");
     }
 }
