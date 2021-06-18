@@ -6,6 +6,7 @@ import java.util.LinkedList;
  * From http://tutorials.jenkov.com/java-concurrency/blocking-queues.html
  */
 public class BlockingQueue {
+	// ALTERNATIVE - Condition class | https://dl.airtable.com/.attachmentThumbnails/cfca8b0a11692295140ee203e1af1581/e0f86e8a
 	private LinkedList<Integer> queue = new LinkedList<>();
 	private int capacity;
 
