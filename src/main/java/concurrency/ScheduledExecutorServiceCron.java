@@ -1,12 +1,11 @@
 package concurrency;
 
-import java.util.Timer;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-public class ScheduledExecutorServiceClass {
+public class ScheduledExecutorServiceCron {
 
     static class Worker implements Runnable{
         int i;
@@ -24,9 +23,10 @@ public class ScheduledExecutorServiceClass {
     public static void main(String[] args) {
 //        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
         ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        scheduledExecutorService.schedule(new Worker(1),5, TimeUnit.SECONDS);
-        scheduledExecutorService.schedule(new Worker(2),3, TimeUnit.SECONDS);
-        scheduledExecutorService.schedule(new Worker(3),1, TimeUnit.SECONDS);
 
+        final ScheduledFuture<?> beeperHandle =
+                scheduledExecutorService.scheduleAtFixedRate(new Worker(5), 2, 3, TimeUnit.SECONDS);
+        scheduledExecutorService.schedule(() -> { beeperHandle.cancel(true); },
+                60 * 60, TimeUnit.SECONDS);
     }
 }
